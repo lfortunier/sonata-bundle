@@ -23,7 +23,7 @@ abstract class AbstractAdmin extends \Sonata\AdminBundle\Admin\AbstractAdmin
 
     /**
      * Remove default batch as customer never really want default behavior
-     * @return array<string>
+     * @return array<string>|array<string, array<string, mixed>>
      */
     public function getBatchActions()
     {
@@ -36,7 +36,7 @@ abstract class AbstractAdmin extends \Sonata\AdminBundle\Admin\AbstractAdmin
 
     /**
      * Remove default export as customer never really want default behavior
-     * @return array<string>|null
+     * @return String[]
      */
     public function getExportFormats()
     {

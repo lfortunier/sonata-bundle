@@ -1,0 +1,41 @@
+{% trans_default_domain 'admin' %}
+
+{% if import_preview_data.data is defined %}
+    <p>
+        {{ 'import.title_preview'|trans({'{nb}': import_preview_data.data|length })|raw }}
+    </p>
+    <br>
+    <table class="table table-bordered" style="table-layout: fixed; width: 100%">
+        <thead>
+        <tr>
+            <th style="width: 3%">{{ 'import.row'|trans }}</th>
+            <th style="width: 7%">{{ 'import.label_action'|trans }}</th>
+            {% for data in import_preview_data.header %}
+                <th style="width: {{ data.width }}%">{{ data.label|trans }}</th>
+            {% endfor %}
+        </tr>
+        </thead>
+        <tbody>
+        {% for datas in import_preview_data.data %}
+            <tr class="{% if datas.action == 'import.update' %}bg-success{% elseif datas.action == 'import.create' %}bg-info{% else %}bg-muted{% endif %}">
+                <td>{{ loop.index }}</td>
+                <td>
+                    <span class="label label-{% if datas.action == 'import.update' %}success{% elseif datas.action == 'import.create' %}info{% else %}muted{% endif %}">
+                        {{ datas.action|trans }}
+                    </span>
+                </td>
+                {% for key,data in datas %}
+                    {% if data is not iterable and key != 'action' %}
+                        <td>{{ data }}</td>
+                    {% elseif key != 'action' %}
+                        {% include '@SmartSonata/import/_import_preview_cell.html.twig' with {
+                            'preview' : data
+                        } %}
+                    {% endif %}
+                {% endfor %}
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endif %}

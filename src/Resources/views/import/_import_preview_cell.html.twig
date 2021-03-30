@@ -1,0 +1,24 @@
+<td style="word-break: break-word">
+    {% if datas.action == 'import.update' and preview.will_change %}
+        <span class="text-red">
+            {% include '@SmartSonata/import/_import_preview_cell_display.html.twig' with {
+                'data' : preview.before
+            } %}
+        </span> >
+        <span class="text-success">
+            {% include '@SmartSonata/import/_import_preview_cell_display.html.twig' with {
+                'data' : preview.after
+            } %}
+        </span>
+    {% elseif not preview.will_change %}
+        <span class="text-muted">
+            {% include '@SmartSonata/import/_import_preview_cell_display.html.twig' with {
+                'data' : preview.after
+            } %}
+        </span>
+    {% else %}
+        {% include '@SmartSonata/import/_import_preview_cell_display.html.twig' with {
+            'data' : preview.after
+        } %}
+    {% endif %}
+</td>

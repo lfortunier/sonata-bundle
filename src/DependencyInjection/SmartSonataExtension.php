@@ -25,5 +25,6 @@ class SmartSonataExtension extends Extension
             new FileLocator(__DIR__ . '/../Resources/config')
         );
         $loader->load('admin_extension.xml');
+        $loader->load('manager.xml');
     }
 }
