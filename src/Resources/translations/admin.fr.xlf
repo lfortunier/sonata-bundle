@@ -19,6 +19,88 @@
                 <source>list.action_view</source>
                 <target>Voir</target>
             </trans-unit>
+
+            <!-- Action -->
+            <trans-unit id="action.import_preview">
+                <source>action.import_preview</source>
+                <target>Aperçu de l'import</target>
+            </trans-unit>
+            <trans-unit id="action.import">
+                <source>action.import</source>
+                <target>Importer</target>
+            </trans-unit>
+            <trans-unit id="action.cancel">
+                <source>action.cancel</source>
+                <target>Annuler</target>
+            </trans-unit>
+
+            <!-- Import -->
+            <trans-unit id="import.label_success">
+                <source>import.label_success</source>
+                <target>Import réussi : création de {nb_create} {entity_label} et {nb_update} mises à jour ({nb_skip} lignes vides ou doublonnés ignorées).</target>
+            </trans-unit>
+            <trans-unit id="import.label_title">
+                <source>import.label_title</source>
+                <target>Import des {entity_label}</target>
+            </trans-unit>
+            <trans-unit id="import.error">
+                <source>import.error</source>
+                <target>Erreur lors du traitement multiple des {entity_label} :</target>
+            </trans-unit>
+            <trans-unit id="import.title_preview">
+                <source>import.title_preview</source>
+                <target><![CDATA[
+                    <b>Voici un aperçu de l'import, sur les {nb} lignes, qui va être exécuté.</b><br>
+                    Si le champ d'une ligne doit être mis à jour alors la différence sera affichée comme cela :
+                    "<span class="text-danger">Avant</span> > <span class="text-success">Après</span>" sinon (aucun changement) la couleur sera <span class="text-muted">grise</span>.
+                ]]></target>
+            </trans-unit>
+            <trans-unit id="import.row">
+                <source>import.row</source>
+                <target>Ligne</target>
+            </trans-unit>
+            <trans-unit id="import.create">
+                <source>import.create</source>
+                <target>Création</target>
+            </trans-unit>
+            <trans-unit id="import.update">
+                <source>import.update</source>
+                <target>Mise à jour</target>
+            </trans-unit>
+            <trans-unit id="import.same">
+                <source>import.same</source>
+                <target>Aucun changement</target>
+            </trans-unit>
+            <trans-unit id="import.label_action">
+                <source>import.label_action</source>
+                <target>Action</target>
+            </trans-unit>
+
+            <!-- Generic field -->
+            <trans-unit id="field.label_import_file">
+                <source>field.label_import_file</source>
+                <target>Importer un fichier csv</target>
+            </trans-unit>
+            <trans-unit id="field.label_import_textarea">
+                <source>field.label_import_textarea</source>
+                <target>Champ libre des données à importer</target>
+            </trans-unit>
+            <trans-unit id="field.help_import">
+                <source>field.help_import</source>
+                <target><![CDATA[
+                    <p class="text-muted">
+                        <b>Format du CSV / Champ libre</b>
+                        <ul class="text-muted">
+                            <li>Le fichier ne doit pas faire plus de 20 Mo</li>
+                            <li>Doit contenir au maximum {nb} lignes</li>
+                            <li>Valeur des colonnes pour chaque ligne : {columns}</li>
+                            <li>Les lignes vides et doublonnées seront ignorées</li>
+                            <li>L'ordre des lignes est important car le traitement de l'import se fera dans le même ordre. S'il y a des références à des relations sur des créations alors les parents doivent être ordonnés avant les enfants.</li>
+                            <li>Un seul des 2 champs doit être renseigné</li>
+                        </ul>
+                    </p>
+                ]]></target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

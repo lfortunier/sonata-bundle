@@ -1,0 +1,7 @@
+{% if data is iterable %}
+    {% for value in data %}
+        {{ value }}
+    {% endfor %}
+{% else %}
+    {{ data }}
+{% endif %}
